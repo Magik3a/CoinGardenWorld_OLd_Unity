@@ -1,0 +1,48 @@
+﻿@page "/counter"
+
+@inject AppState AppState
+@layout MainLayout
+<PageTitle>Counter</PageTitle>
+
+<InternalPagesBannerTemplate Title="Counter" Description="">
+</InternalPagesBannerTemplate>
+<section class="section pdt-0 ov-v">
+    <div class="ui-mask-left ui-mask-s9"></div>
+    <div class="container">
+        <!-- Block @s -->
+        <div class="nk-block nk-block-text-wrap">
+            <div class="row align-items-center gutter-vr-30px justify-content-between gutter-vr-30px">
+                <div class="col-lg-5 col-mb-9 m-auto order-first order-lg-last">
+                    <div class="nk-block-img animated" data-animate="fadeInUp" data-delay=".3">
+                        <img src="_content/LandingPage.Theme/images/gfx/gfx-z-g.png" alt="app">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="nk-block-text animated" data-animate="fadeInUp" data-delay=".2">
+                        <div class="nk-block-shade"></div>
+                        <h3 class="title title-dark title-regular">Counter</h3>
+                        
+
+                        <p role="status">Current count: @currentCount</p>
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+                    </div>
+                </div>
+            </div><!-- .row -->
+        </div><!-- .block @e -->
+    </div>
+</section>
+
+
+<ThemePageLoader></ThemePageLoader>
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        AppState.PageRendered(firstRender);
+    }
+}

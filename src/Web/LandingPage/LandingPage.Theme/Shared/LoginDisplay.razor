@@ -1,0 +1,79 @@
+﻿@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@using Microsoft.JSInterop
+@inject IJSRuntime JS
+
+@inject NavigationManager Navigation
+@inject SignOutSessionStateManager SignOutManager
+
+<AuthorizeView>
+    <Authorized>
+        @*<button class="nav-link btn btn-link" @onclick="BeginLogout">Log out</button>*@
+         <div class="toggle-wrap mr-2">
+                    <a  class="toggle-tigger @isActive" @onclick="ChangeActiveMenuState">
+                        <img class="img-xs circle" src="_content/LandingPage.Theme/images/team/sm-a.jpg" alt="img">
+                    </a>
+                    <div class="toggle-class toggle-drop toggle-drop-left @isActive">
+                        
+                <ul class="drop-list">
+                    <li><a href="#">
+        Hello, @context.User.Identity?.Name</a></li>
+                    <li><a href="#">Activity</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#" @onclick="BeginLogout">Log Out</a></li>
+                </ul>
+                    </div>
+                </div>
+
+    </Authorized>
+    <NotAuthorized>
+        
+                <ul class="">
+                        <li>
+                            <a href="authentication/login" class="btn btn-sm btn-auto btn-outline btn-primary">
+                                <span>Login</span>
+                            </a>
+                        </li>
+                          </ul>
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+    public bool afterRender;
+    string isActive = "";
+
+    private void ChangeActiveMenuState()
+    {
+        if(!String.IsNullOrEmpty(isActive))
+        {
+            isActive = "";
+            this.StateHasChanged();
+        }
+        else
+        {
+            isActive = "active";
+            this.StateHasChanged();
+        }
+    }
+
+    private async Task BeginLogout(MouseEventArgs args)
+    {
+        await SignOutManager.SetSignOutState();
+        Navigation.NavigateTo("authentication/logout");
+    }
+
+    IJSObjectReference? module;
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+
+        //if (module == null)
+        //    module = await JS.InvokeAsync<IJSObjectReference>("import", "./_content/LandingPage.Theme/js/scripts.js");
+        if (firstRender)
+        {
+            afterRender = true;
+        }
+
+        //await module.InvokeVoidAsync("NioApp.winLoad", JS);
+
+    }
+}

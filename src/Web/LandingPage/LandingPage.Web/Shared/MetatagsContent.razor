@@ -1,0 +1,42 @@
+﻿@inject NavigationManager NavigationManager
+
+<HeadContent>
+  <meta name="description" content="A small description of some good content on this page" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="@(NavigationManager.BaseUri)sitemap.xml" />
+  <link rel="alternate" type="application/rss+xml" href="@(NavigationManager.BaseUri)atom.xml">
+  <link rel="canonical" href="@(NavigationManager.BaseUri)good-content" />
+  <meta name="robots" content="index, follow" />
+  @*<script type="application/ld+json">
+  {
+    "@@context": "https://schema.org/",
+    "@@type": "Recipe",
+    "name": "Party Coffee Cake",
+    "author": {
+      "@@type": "Person",
+      "name": "Mary Stone"
+    },
+    "datePublished": "2018-03-10",
+    "description": "This coffee cake is awesome and perfect for parties.",
+    "prepTime": "PT20M"
+  }
+  </script>*@
+
+    <meta property="og:title" content="Title of some good content" />
+  <meta property="og:description" content="A small description of some good content on this page" />
+  <meta property="og:image" content="@(NavigationManager.BaseUri)page/to/open-graph-image.png" />
+  <meta property="og:image:alt" content="Alternative description for your image" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="@(NavigationManager.BaseUri)good-content" />
+  <meta property="og:site_name" content="The name of your site" />
+  <meta name="twitter:title" content="Title of some good content" />
+  <meta name="twitter:description" content="A small description of some good content on this page" />
+  <meta name="twitter:image" content="@(NavigationManager.BaseUri)page/to/twitter-image.png" />
+  <meta name="twitter:image:alt" content="Alternative description for your image" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@@YourTwitterHandle" />
+  <meta name="twitter:creator" content="@@YourTwitterHandle" />
+</HeadContent>
+
+@code {
+
+}

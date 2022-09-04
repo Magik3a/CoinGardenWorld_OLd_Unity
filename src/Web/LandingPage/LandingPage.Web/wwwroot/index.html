@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" class="js">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
+    <title>LandingPage.Web</title>
+    <base href="/" />
+
+
+    <!--<link href="css/app.css" rel="stylesheet" />-->
+    <link rel="stylesheet" href="_content/LandingPage.Theme/css/vendor.bundle.css">
+
+
+    <link rel="stylesheet" href="_content/LandingPage.Theme/css/style-lobelia.css?ver=1930" id="changeTheme">
+    <link rel="stylesheet" href="_content/LandingPage.Theme/css/theme.css">
+
+    <!--<link href="LandingPage.Web.styles.css" rel="stylesheet" />-->
+
+    <link href="manifest.json" rel="manifest" />
+    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
+
+
+</head>
+ 
+<body class="nk-body body-wider mode-onepage bg-light">
+    <!-- preloader -->
+
+    <div id="app" class="nk-wrap">
+        <div class="preloader preloader-alt no-split"><span class="spinner spinner-alt"><img class="spinner-brand" src="_content/LandingPage.Theme/images/logo-full-white.png" alt=""></span></div>
+
+
+
+    </div>
+    <!--<div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>-->
+
+
+
+    <script src="_content/Microsoft.Authentication.WebAssembly.Msal/AuthenticationService.js"></script>
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script src="./_content/SharedComponents.Translations/translationsJsInterop.js"></script>
+
+    <script>navigator.serviceWorker.register('service-worker.js');</script>
+
+    <script src="./_content/LandingPage.Theme/js/jquery.bundle.js"></script>
+
+    <!--<script src="./_content/LandingPage.Theme/js/scripts.js"></script>-->
+    <script src="./_content/LandingPage.Theme/themeJsInterop.js"></script>
+
+    <script>
+        window.returnArrayAsync = () => {
+            DotNet.invokeMethodAsync('SharedComponents.Translations', 'ChangeCulture')
+                .then(data => {
+                    console.log(data);
+                });
+        };
+    </script>
+</body>
+
+</html>

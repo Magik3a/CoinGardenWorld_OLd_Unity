@@ -1,0 +1,40 @@
+﻿@inherits LayoutComponentBase
+@inject AppState AppState
+
+@inject IJSRuntime JS
+
+
+<header class="nk-header page-header is-transparent is-sticky is-shrink" id="header">
+    <MainMenu @ref=mainMenu></MainMenu>
+
+    @BannerContent
+
+</header>
+
+<main class="nk-pages">
+    @Body
+
+</main>
+ <div class="preloader preloader-alt no-split"><span class="spinner spinner-alt"><img class="spinner-brand" src="_content/LandingPage.Theme/images/logo-full-white.png" alt=""></span></div>
+
+
+<footer class="nk-footer bg-theme-grad ov-h">
+    <IndexFooter></IndexFooter>
+</footer>
+
+@code {
+    MainMenu? mainMenu;
+
+    [Parameter]
+    public RenderFragment? BannerContent { get; set; }
+
+    bool afterRender;
+
+
+    //IJSObjectReference? module;
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        afterRender = true;
+
+    }
+}

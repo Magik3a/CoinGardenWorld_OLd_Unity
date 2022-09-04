@@ -1,0 +1,83 @@
+﻿@using Microsoft.AspNetCore.Components.Authorization
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+@using Microsoft.JSInterop
+@inject IJSRuntime JS
+<!-- Copy from here -->
+<div class="header-main ">
+    <div class="header-container container">
+        <div class="header-wrap">
+            <!-- Logo @s -->
+            <div class="header-logo logo">
+                <a href="./" class="logo-link">
+                    <img class="logo-dark" src="_content/LandingPage.Theme/images/logo.png" srcset="_content/LandingPage.Theme/images/logo2x.png 2x" alt="logo">
+                    <img class="logo-light" src="_content/LandingPage.Theme/images/logo-full-white.png" srcset="_content/LandingPage.Theme/images/logo-full-white2x.png 2x" alt="logo">
+                </a>
+            </div>
+            <!-- Menu Toogle @s -->
+            <div class="header-nav-toggle d-flex align-items-center d-lg-none">
+
+                <LoginDisplay></LoginDisplay>
+
+                <a href="#" class="navbar-toggle" data-menu-toggle="example-menu-06">
+                    <div class="toggle-line">
+                        <span></span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Menu @s -->
+            <div class="header-navbar">
+                <nav class="header-menu" id="example-menu-06">
+                    <ul class="menu">
+                        <li class="menu-item">
+                            <NavLink class="menu-link nav-link" href="" Match="NavLinkMatch.All">
+                                Home
+                            </NavLink>
+                        </li>
+                        <li class="menu-item">
+                            <NavLink class="menu-link nav-link" href="counter">
+                                Counter
+                            </NavLink>
+                        </li>
+                        <li class="menu-item">
+                            <NavLink class="menu-link nav-link" href="culture-test">
+                                Culture Test
+                            </NavLink>
+                        </li>
+                        <li class="menu-item">
+                            <NavLink class="menu-link nav-link" href="fetchdata">
+                                Fetch data
+                            </NavLink>
+                        </li>
+                    </ul>
+
+
+
+                    <LoginDisplay></LoginDisplay>
+
+                    <ul class="menu-btns ">
+                        @*
+                            <li class="toggle-wrap">
+                            <a href="#" class="toggle-tigger">
+                            <img class="img-xs circle" src="_content/LandingPage.Theme/images/team/sm-a.jpg" alt="img">
+                            </a>
+                            <div class="toggle-class toggle-drop toggle-drop-left">
+                            <LoginDisplay></LoginDisplay>
+                            </div>
+                            </li>*@
+                        <li>
+                            <CultureSelector></CultureSelector>
+                        </li>
+                    </ul>
+                </nav>
+            </div><!-- .header-navbar @e -->
+        </div>
+    </div>
+</div><!-- .header-main @e -->
+<!-- Stop here -->
+
+
+@code {
+    
+}

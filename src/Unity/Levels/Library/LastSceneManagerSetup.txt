@@ -1,0 +1,17 @@
+sceneSetups:
+- path: Assets/RPGPP_LT/Scene/rpgpp_lt_scene_1.0.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Scenes/Level 1.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Scenes/Level2.unity
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0
+- path: Assets/Scenes/Menu.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0

@@ -1,0 +1,71 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web", "web", "{F5059781-82F6-4950-84DF-62744FAC87F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LandingPage", "LandingPage", "{C01CE639-3323-4156-A3F2-6817F6C3E353}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LandingPage.Web", "web\LandingPage\LandingPage.Web\LandingPage.Web.csproj", "{90DFB7E5-8B45-4BA6-93AE-EC1732540517}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedComponents", "SharedComponents", "{F5D4F34E-AF00-4841-A180-12A4A82E3AED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedComponents.Translations", "web\SharedComponents\SharedComponents.Translations\SharedComponents.Translations.csproj", "{2511A450-B892-41C4-8754-3E520DCF47E3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LandingPage.Theme", "web\LandingPage\LandingPage.Theme\LandingPage.Theme.csproj", "{DA39F2AB-598B-4740-AFF3-ABB0C1DDDBF4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{343887C4-FBF4-4463-B435-C19F32818FE5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "en", "en", "{D5558BF5-DBE7-4A5A-B9AB-BF434CB83FEB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LandingPage.FunctionAPI", "web\LandingPage\LandingPage.FunctionAPI\LandingPage.FunctionAPI.csproj", "{8DEF40D2-0EBB-48BA-8024-8D23A68769B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{281457F9-E672-4013-A20C-A143D0198DDE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "github", "github", "{5A436736-6C47-4C32-AB3A-7CC02936AD7A}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\azure-static-web-apps-ashy-sand-0a8a38810.yml = ..\.github\workflows\azure-static-web-apps-ashy-sand-0a8a38810.yml
+		..\.github\workflows\publish-docs.yml = ..\.github\workflows\publish-docs.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90DFB7E5-8B45-4BA6-93AE-EC1732540517}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90DFB7E5-8B45-4BA6-93AE-EC1732540517}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90DFB7E5-8B45-4BA6-93AE-EC1732540517}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90DFB7E5-8B45-4BA6-93AE-EC1732540517}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2511A450-B892-41C4-8754-3E520DCF47E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2511A450-B892-41C4-8754-3E520DCF47E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2511A450-B892-41C4-8754-3E520DCF47E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2511A450-B892-41C4-8754-3E520DCF47E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA39F2AB-598B-4740-AFF3-ABB0C1DDDBF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA39F2AB-598B-4740-AFF3-ABB0C1DDDBF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA39F2AB-598B-4740-AFF3-ABB0C1DDDBF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA39F2AB-598B-4740-AFF3-ABB0C1DDDBF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DEF40D2-0EBB-48BA-8024-8D23A68769B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DEF40D2-0EBB-48BA-8024-8D23A68769B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DEF40D2-0EBB-48BA-8024-8D23A68769B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DEF40D2-0EBB-48BA-8024-8D23A68769B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C01CE639-3323-4156-A3F2-6817F6C3E353} = {F5059781-82F6-4950-84DF-62744FAC87F0}
+		{90DFB7E5-8B45-4BA6-93AE-EC1732540517} = {C01CE639-3323-4156-A3F2-6817F6C3E353}
+		{F5D4F34E-AF00-4841-A180-12A4A82E3AED} = {F5059781-82F6-4950-84DF-62744FAC87F0}
+		{2511A450-B892-41C4-8754-3E520DCF47E3} = {F5D4F34E-AF00-4841-A180-12A4A82E3AED}
+		{DA39F2AB-598B-4740-AFF3-ABB0C1DDDBF4} = {C01CE639-3323-4156-A3F2-6817F6C3E353}
+		{D5558BF5-DBE7-4A5A-B9AB-BF434CB83FEB} = {343887C4-FBF4-4463-B435-C19F32818FE5}
+		{8DEF40D2-0EBB-48BA-8024-8D23A68769B0} = {C01CE639-3323-4156-A3F2-6817F6C3E353}
+		{5A436736-6C47-4C32-AB3A-7CC02936AD7A} = {281457F9-E672-4013-A20C-A143D0198DDE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {12F2B295-3296-44BC-B412-6B5B3B0A9E4B}
+	EndGlobalSection
+EndGlobal

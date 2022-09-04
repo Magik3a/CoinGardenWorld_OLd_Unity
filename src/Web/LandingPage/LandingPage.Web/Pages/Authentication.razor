@@ -1,0 +1,11 @@
+﻿@page "/authentication/{action}"
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+<InternalPagesBannerTemplate Title="Authentication" Description="">
+</InternalPagesBannerTemplate>
+
+<RemoteAuthenticatorView Action="@Action" />
+
+<UserTogglerTemplate></UserTogglerTemplate>
+@code{
+    [Parameter] public string? Action { get; set; }
+}

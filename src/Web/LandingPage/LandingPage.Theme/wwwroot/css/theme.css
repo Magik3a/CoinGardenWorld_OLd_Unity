@@ -1,0 +1,52 @@
+/*!
+Template :	S2KDesign
+Theme	 :  Default
+Version   :  1.0.0
+Updated   :  05/12/2021 
+*/
+/*! WRITE YOUR CUSTOM STYLE **/
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar:hover {
+    width: 15px;
+}
+
+    body::-webkit-scrollbar-track {
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+body::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(45deg, #6DC219,#6e19c2);
+    border-radius: 15px;
+    -webkit-box-shadow: rgba(0,0,0,.12) 0 3px 13px 1px;
+}
+
+
+
+.bg-theme-grad {
+    background-image: linear-gradient(to right, #6DC219 0%, #C26E19 50%, #6e19c2 100%) !important;
+}
+.toggle-wrap{
+    cursor: pointer;
+}
+
+@media (min-width: 992px) {
+    .select2-container--default .select2-selection--single .select2-selection__placeholder {
+        color: #444;
+    }
+
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+        color: #fff;
+    }
+
+
+    .has-fixed:not(.is-dark) .header-menu .btn-outline:not(:hover) {
+        border-color: #415076 !important;
+    }
+    .has-fixed:not(.is-dark) .select2-container--default .select2-selection--single .select2-selection__rendered {
+        color: #415076;
+    }
+}

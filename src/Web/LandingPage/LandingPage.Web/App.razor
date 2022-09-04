@@ -1,0 +1,45 @@
+﻿
+@using Microsoft.JSInterop
+@inject IJSRuntime JS
+
+<CascadingAuthenticationState>
+    <Router 
+    AppAssembly="@typeof(App).Assembly"
+    AdditionalAssemblies="new[]{typeof(SharedComponents.Translations.CultureSelector).Assembly, typeof(LandingPage.Theme.Shared.MainMenu).Assembly}">
+        <Found Context="routeData">
+            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+                <NotAuthorized>
+                    @if (context.User.Identity?.IsAuthenticated != true)
+                    {
+                        <RedirectToLogin />
+                    }
+                    else
+                    {
+                        <p role="alert">You are not authorized to access this resource.</p>
+                    }
+                </NotAuthorized>
+            </AuthorizeRouteView>
+            <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+        </Found>
+        <NotFound>
+            <PageTitle>Not found</PageTitle>
+            <LayoutView Layout="@typeof(MainLayout)">
+                <p role="alert">Sorry, there's nothing at this address.</p>
+            </LayoutView>
+        </NotFound>
+    </Router>
+</CascadingAuthenticationState>
+@code {
+    //IJSObjectReference module;
+    //protected override async Task OnAfterRenderAsync(bool firstRender)
+    //{
+    //    if (firstRender)
+    //    {
+    //        module = await JS.InvokeAsync<IJSObjectReference>("import", "./_content/LandingPage.Theme/js/scripts.js");
+    //    }
+        
+    //        await module.InvokeVoidAsync("NioApp.docReady", JS);
+    //        await module.InvokeVoidAsync("NioApp.winLoad", JS);
+        
+    //}
+}

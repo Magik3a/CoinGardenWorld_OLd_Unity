@@ -1,0 +1,56 @@
+﻿@using System.Globalization
+@inject IJSRuntime JSRuntime
+@inject NavigationManager Nav
+
+@using Microsoft.JSInterop;
+<select id="culture-options" @onchange="ChangeCulture" class="culture-selector" data-select2-theme="line" >
+    @foreach (var culture in supportedCultures)
+    {
+        <option value="@culture">@culture.DisplayName</option>
+    }
+</select>
+
+@code
+{
+    private DotNetObjectReference<CultureSelector>? objRef;
+    protected override async Task OnInitializedAsync()
+    {
+        objRef = DotNetObjectReference.Create(this);
+    }
+
+    private CultureInfo[] supportedCultures = new[]
+            {
+        new CultureInfo("en-US"),
+        new CultureInfo("bg-BG"),
+        new CultureInfo("es-CL"),
+    };
+
+    private CultureInfo Culture
+    {
+        get => CultureInfo.CurrentCulture;
+        set
+        {
+
+            if (CultureInfo.CurrentCulture != value)
+            {
+                var js = (IJSInProcessRuntime)JSRuntime;
+                js.InvokeVoid("setBlazorCulture", value.Name);
+
+                Nav.NavigateTo(Nav.Uri, forceLoad: true);
+            }
+        }
+    }
+    [JSInvokable]
+     public void  ChangeCulture()
+    {
+            Console.WriteLine("From callback ,received:" ); //gets updated
+                Nav.NavigateTo(Nav.Uri, forceLoad: true);
+    }
+    protected override Task OnAfterRenderAsync(bool firstRender)
+    {
+
+        var js = (IJSInProcessRuntime)JSRuntime;
+        js.InvokeVoid("loadCultureSelect2");
+        return base.OnAfterRenderAsync(firstRender);
+    }
+}
